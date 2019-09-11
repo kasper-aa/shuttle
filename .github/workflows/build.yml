@@ -6,7 +6,7 @@ jobs:
     name: SonarCloud Trigger
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@ma
+    - uses: actions/checkout@master
 
     - name: run tests
       run: go test ./pkg/... -run Test* -coverprofile=c.out -json > report.json
