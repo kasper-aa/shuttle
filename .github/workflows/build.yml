@@ -1,11 +1,16 @@
 on: push
 name: sonar
+
 jobs:
   sonarCloudTrigger:
     name: SonarCloud Trigger
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@ma
+
+    - name: run tests
+      run: go test ./pkg/... -run Test* -coverprofile=c.out -json > report.json
+
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:
