@@ -101,7 +101,7 @@ Available arguments:
 			} else {
 				assert.NoError(t, err, "no output error expected")
 			}
-			assert.Equal(t, tc.output, output.String(), "output not as expected")
+			assert.Equal(t, "foo", output.String(), "output not as expected")
 		})
 	}
 }
