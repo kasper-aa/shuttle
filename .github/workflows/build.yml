@@ -8,8 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
+    - build: build
+      run: go build
+
     - name: run tests
-      run: go test ./pkg/... -run Test* -coverprofile=c.out -json > report.json || true
+      run: go test ./pkg/... -run Test* -coverprofile=c.out -json > report.json
 
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
